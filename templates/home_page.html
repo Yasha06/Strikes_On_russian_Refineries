@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BurningRussiaNPZ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+
+  <link rel="stylesheet" href="../static/css/home_css.css">
+  <link rel="icon" type="image/png" href="../static/assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>BurningBarrels</h1>
+        <p>Ми спеціалізуємося на вогні!</p>
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-sm-4"><h4>У росії навіть пожежна безпека пішла у відпустку.
+            Коли замість свічки запалюєш цілий НПЗ.</h4>
+            <h3 style="color: #ffffff; background-color: #B22222; width:70%; height:100%;">Найцікавіше попереду!</h3>
+        </div>
+        <div class="col-sm-8">
+          <img src="../static/assets/pic1.jpg" width="400" height="300">
+          <img src="../static/assets/pic2.jpg" width="400" height="300">
+        </div>
+    </div>
+
+    <div class="container-fluid text-center" style="background-color: #f6f6f6;">
+      <h2>Інтерактивна карта ударів</h2>
+      <h4>Дослідіть географію та інтенсивність атак на російські НПЗ. Кожен маркер — це історія одного "хлопка".</h4>
+      <a href="{{ url_for('map') }}" class="btn btn-danger btn-lg" style="margin-top: 20px;">
+        <span class="glyphicon glyphicon-fire"></span> Перейти до карти
+      </a>
+    </div>
+    <div class="container-fluid bg-grey" style = "margin-top: 20px; background-color:  #B22222;">
+  <div class="row">
+    <div class="col-sm-4">
+        <span class="glyphicon glyphicon-signal logo" style="color: #fffdfd;"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2 style = "margin-bottom: 25px; color: #ffffff;">Про нас</h2>
+      <h4 style = "margin-bottom: 25px; color: #ffffff;"><strong>Місія:</strong> Наше завдання — надати актуальну аналітику руйнівних наслідків
+        для російської економіки через призму ударів по її ключових нафтопереробних об'єктах.</h4>
+      <h4 style = "color: #ffffff;"><strong>Візія:</strong> Стати незалежним джерелом достовірних даних та оцінки впливу українських ударів на російський нафтогазовий сектор.</h4>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid" style="background-color: #ffffff; padding-top: 80px; padding-bottom: 50px;">
+    </div>
+
+<div class="container-fluid text-center" style="color: #f7f6f6; background-color: #B22222;">
+  <br>
+  <div class="row" style="color: #CCCCCC;">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-screenshot"></span>
+      <h4>Ураження</h4>
+      <p>Українські дрони нещодавно вразили одну з найбільших нафтопереробних потужностей у росії — НПЗ «Салават» в Башкортостані,
+        що спричинило пожежу та зупинку виробництва.</p>
+      <button class="btn btn-default btn-lg" style="color: #ffffff; background-color: #B22222;"><a href="{{ url_for('analytics') }}" style="color: #ffffff;">Аналітика</a></button>
+
+    </div>
+    <div class="col-sm-4">
+      <img src = "../static/assets/pic7.jpg" style="width:50%; height:50%;">
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-ok"></span>
+      <h4>Хороші новини</h4>
+      <p>Згідно з оцінками аналітиків, оборот доходів від експорту нафтопродуктів у рф істотно зменшується через зниження потужностей переробки.
+        Через атаки на НПЗ Росія змушена обмежувати експорт бензину й дизелю, щоб забезпечити своє внутрішнє споживання.
+      </p>
+    </div>
+    </div>
+    <br><br>
+  <div class="row"  style="color: #CCCCCC;">
+    <div class="col-sm-4">
+      <img src = "../static/assets/pic6.jpg" style="width:80%; height:100%;">
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-eye-close"></span>
+      <h4>Пожежі</h4>
+      <p>У серпні 2025 року пристрої, які були виведені з роботи внаслідок атак дронів, + планового техобслуговування, склали 6,4 мільйона тонн.
+        Із цієї суми майже 3,1 мільйона тонн припадає на шкоду внаслідок саме дрон-атак.
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <img src = "../static/assets/pic8.jpg" style="width:80%; height:100%;">
+    </div>
+  </div>
+</div>
+
+<div id="photoCarousel" class="carousel slide" data-ride="carousel" style="margin-top:80px; margin-bottom:90px;">
+
+  <style>
+    .carousel-image {
+      height: 400px; /* Задаємо однакову висоту для всіх картинок */
+      width: 60%;    /* Залишаємо вашу ширину */
+      object-fit: cover; /* Ця властивість обрізає, а не спотворює картинку, щоб вона вписалася */
+    }
+  </style>
+
+  <ol class="carousel-indicators">
+    <li data-target="#photoCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#photoCarousel" data-slide-to="1"></li>
+    <li data-target="#photoCarousel" data-slide-to="2"></li>
+    <li data-target="#photoCarousel" data-slide-to="3"></li>
+    <li data-target="#photoCarousel" data-slide-to="4"></li>
+    <li data-target="#photoCarousel" data-slide-to="5"></li>
+  </ol>
+
+  <div class="carousel-inner text-center" style="font-family: Montserrat, sans-serif;">
+
+    <div class="item active">
+      <p style="color: #ffffff; background-color: #B22222; width: 40%; text-align: center; margin: 0 auto 20px auto; padding: 10px;">
+        Схоже, хтось забув вимкнути газову плиту...</p>
+      <img src="../static/assets/pic3.webp" alt="First slide" class="center-block carousel-image">
+    </div>
+
+    <div class="item">
+      <p style="color: #ffffff; background-color: #B22222; width: 40%; text-align: center; margin: 0 auto 20px auto; padding: 10px;">
+        Ідеальна ілюстрація "енергетичної незалежності"</p>
+      <img src="../static/assets/pic4.jpg" alt="Second slide" class="center-block carousel-image">
+    </div>
+
+    <div class="item">
+      <p style="color: #ffffff; background-color: #B22222; width: 40%; text-align: center; margin: 0 auto 20px auto; padding: 10px;">
+        Безкоштовний ароматизатор для всієї округи</p>
+      <img src="../static/assets/pic5.webp" alt="Third slide" class="center-block carousel-image">
+    </div>
+
+    <div class="item">
+      <p style="color: #ffffff; background-color: #B22222; width: 40%; text-align: center; margin: 0 auto 20px auto; padding: 10px;">
+        Немає зброї страшнішої за "Абломкі Украінскіх бєспілотніков"</p>
+      <img src="../static/assets/1408V.jpg" alt="Fourth slide" class="center-block carousel-image">
+    </div>
+
+    <div class="item">
+      <p style="color: #ffffff; background-color: #B22222; width: 40%; text-align: center; margin: 0 auto 20px auto; padding: 10px;">
+        Найдієвіші санкції - це кінетичні</p>
+      <img src="../static/assets/кінетичні.jpg" alt="Fifth slide" class="center-block carousel-image">
+    </div>
+
+    <div class="item">
+      <p style="color: #ffffff; background-color: #B22222; width: 40%; text-align: center; margin: 0 auto 20px auto; padding: 10px;">
+        Нічого серйозного - просто "Внєпланавиє астановки НПЗ"</p>
+      <img src="../static/assets/1408KI.png" alt="Sixth slide" class="center-block carousel-image">
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#photoCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#photoCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+
+<h2 style="text-align: center; margin: 60px auto 5px auto; color: #ffffff; background-color: #B22222; padding: 40px 20px; font-size: 25px; font-family: Montserrat, sans-serif;">Цитати  «відомих»  людей:</h2>
+<div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+    <h4>"Ми обов'язково будемо в Києві. Рано або пізно. Скоріше за все - рано, не хочу Вас розчаровувати"<br><span style="font-style:normal;">Кеосаян Тигран Едмондович (загинув у 2025 від раку)</span></h4>
+    </div>
+    <div class="item">
+      <h4>"Я хочу, щоб усі розуміли: Росія ще нічого не починала всерйоз в Україні."<br><span style="font-style:normal;">Володимир Путін (чомусь ще досі живий)</span></h4>
+    </div>
+    <div class="item">
+      <h4>"Всіх переможемо, всіх вб'ємо, всіх, кого треба, пограбуємо. Все буде, як ми любимо."<br><span style="font-style:normal;">Владлен Татарський (Максим Фомін), воєнкор (загинув у Санкт-Петербурзі)</span></h4>
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-top" >
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ url_for('home') }}">
+        <img src="../static/assets/logo.png" alt="Logo" width="170">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('home') }}">Про нас</a></li>
+        <li><a href="{{ url_for('analytics') }}">Аналітика</a></li>
+        <li><a href="{{ url_for('map') }}">Карта</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<div id="about" class="container-fluid">
+<div id="services" class="container-fluid">
+<div id="portfolio" class="container-fluid">
+
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+</body>
+</html>

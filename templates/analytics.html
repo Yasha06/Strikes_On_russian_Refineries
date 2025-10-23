@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>BurningRussiaNPZ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="../static/css/home_css.css">
+  <link rel="icon" type="image/png" href="../static/assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<main> 
+<div class="jumbotron text-center">
+    <h1>BurningBarrels</h1>
+    <p>Ми спеціалізуємося на вогні!</p>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{ url_for('home') }}">
+        <img src="../static/assets/logo.png" alt="Logo" width="170">
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('home') }}">Про нас</a></li>
+        <li><a href="{{ url_for('analytics') }}">Аналітика</a></li>
+        <li><a href="{{ url_for('map') }}">Карта</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid bg-grey" style = "margin-top: -30px; background-color: #ffffff;">
+  <div class="row">
+    <div class="col-sm-5" style="margin-top: -60px;">
+         <img src="../static/assets/graphic.jpg" class="img-responsive" alt="Графічне зображення">
+    </div>
+    <div class="col-sm-7">
+      <h2 style = "margin-bottom: 25px;">Наша Аналітика:</h2>
+      <ul>
+        <li>Географія ударів: Українські БПЛА змогли досягти об'єктів на значних відстанях (до 1500-1700 км), охоплюючи європейську частину росії, де розташована більшість НПЗ, зокрема такі великі як "Кіришінефтеоргсинтез" (Ленінградська область), Рязанський, Волгоградський, Новокуйбишевський НПЗ та інші.</li>
+        <li>Зниження потужностей: Удари вивели з ладу значну частину потужностей російської нафтопереробки. Агентство Reuters та українська розвідка говорять про виведення з ладу близько 17% потужностей. Пізніші оцінки, зокрема російських аналітичних агенцій, вказують, що через атаки та ремонтні роботи може простоювати до 40% потужностей НПЗ РФ.</li>
+        <li>Ураження націлені на ключові та найбільш вразливі технологічні установки – установки первинної переробки нафти (атмосферної дистиляції), які важко і довго ремонтувати, особливо в умовах санкцій, що обмежують доступ до західного обладнання та запчастин.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row" style = "margin-top: -10px; padding-left: 140px; background-color: #B22222; color: #ffffff;">
+  <div class="col-sm-3"><h2>17%</h2></div>
+  <div class="col-sm-3"><h2>До 40%</h2></div>
+  <div class="col-sm-3"><h2>~10%</h2></div>
+  <div class="col-sm-3"><h2>50% (з початку року)</h2></div>
+</div>
+<div class="row" style = "margin-top: -20px; padding-left: 140px; background-color: #B22222; color: #ffffff;">
+  <div class="col-sm-3"><h6>Зниження потужностей переробки</h6></div>
+  <div class="col-sm-3"><h6>Максимальний потенційний простій</h6></div>
+  <div class="col-sm-3"><h6>Падіння виробництва бензину</h6></div>
+  <div class="col-sm-3"><h6>Зростання оптових цін на бензин у рф</h6></div>
+</div>
+
+
+<div class="container-fluid" style="background-color: #ffffff; padding-top: 20px; padding-bottom: -20px;">
+    </div>
+
+<div class="row" style = "margin-top: -10px; padding-left: 140px; background-color: #B22222; color: #ffffff;">
+  <div class="col-sm-4"><h2>1500–1700 км</h2></div>
+  <div class="col-sm-4"><h2>Мінімум 16</h2></div>
+  <div class="col-sm-4"><h2>~3 успішні ураження на тиждень</h2></div>
+</div>
+<div class="row" style = "margin-top: -10px; padding-left: 140px; background-color: #B22222; color: #ffffff;">
+  <div class="col-sm-4"><h6>Дальність ударів (максимальна)</h6></div>
+  <div class="col-sm-4"><h6>Кількість атакованих НПЗ (на вересень 2025)</h6></div>
+  <div class="col-sm-4"><h6>Темп ударів (за два місяці)</h6></div>
+</div>
+
+
+<div class="clearfix"></div> 
+
+
+<div id="chart-price-container" style = "margin-top: 120px;"></div>
+<div id="chart-price-container_two" style = "margin-top: 40px;"></div>
+
+  <!-- Інтерв’ю та коментарі експертів -->
+<section class="experts" style="margin-top: 90px; padding: 40px 0;">
+  <div class="container-fluid" style="background-color: #B22222; color: azure; padding: 30px 50px;">
+  <h2 style="text-align: center; color: azure; margin-top: 0;">Інтерв’ю та коментарі експертів:</h2>
+
+  <div class="row expert" style="margin-top: 50px;">
+    <div class="col-sm-6">
+      <img src="../static/assets/reuters.jpeg" alt="Експерт" class="img-circle" style = "width: 230px; height: 230px; margin-left: 220px">
+    </div>
+    <div class="col-sm-6">
+      <strong>Агентство Reuters</strong>, аналітичний звіт.<br>
+      <em>“Ми спостерігаємо скорочення експорту бензину та інших нафтопродуктів... Росія втрачає значну частину своїх доходів, а також стикається з ризиком дефіциту пального на внутрішньому ринку, особливо в розпал посівного сезону.”</em>
+    </div>
+    </div>
+
+  <div class="row expert" style="margin-top: 30px; padding: 20px;">
+    <div class="col-sm-6">
+      <img src="../static/assets/bloomberg.png" alt="Експерт" class="img-circle" style = "width: 230px; height: 230px; margin-left: 190px">
+    </div>
+    <div class="col-sm-6">
+      <strong>Bloomberg</strong> — інформаційне агенство.<br>
+      <em>“Росія була змушена заборонити експорт бензину, щоб стабілізувати ціни на внутрішньому ринку на тлі зростаючого попиту та скорочення виробництва через аварії на НПЗ.”</em>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<script>
+    // 1. Отримуємо контейнер
+    const container1 = document.getElementById("chart-price-container");
+    const shadow1 = container1.attachShadow({ mode: "open" });
+
+    // 2. HTML-структура лише для першого графіка
+    shadow1.innerHTML = `
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <div class="container mx-auto p-4 md:p-8 space-y-8 font-[Inter] bg-gray-50">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-3xl text-black font-bold text-[#118AB2] mb-4 text-center" style = "font-family: Montserrat, sans-serif;">Динаміка зростання ціни на бензин А-95 у росії у 2023-2024 роках:</h2>
+                <p class="text-center text-black text-slate-600 mb-6" style = "font-family: Montserrat, sans-serif; font-size: 13px;">Атаки на НПЗ стали головним каталізатором стрімкого зростання цін на пальне на внутрішньому ринку росії, особливо у першій половині 2024 року. Загальне зростання з початку 2022 року перевищило 27%.</p>
+                <div class="chart-container h-80">
+                    <canvas id="priceTrendChart"></canvas>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // 3. Скрипт Chart.js для першого графіка
+    const script1 = document.createElement('script');
+    script1.src = "https://cdn.jsdelivr.net/npm/chart.js";
+    script1.onload = () => {
+        // (Опціонально) Функція для Tooltip
+        const tooltipTitleCallback = { callbacks: { title: (items) => Array.isArray(items[0].chart.data.labels[items[0].dataIndex]) ? items[0].chart.data.labels[items[0].dataIndex].join(' ') : items[0].chart.data.labels[items[0].dataIndex] } };
+
+        const priceTrendCtx = shadow1.getElementById('priceTrendChart').getContext('2d');
+        new Chart(priceTrendCtx, {
+            type: 'line',
+            data: {
+                labels: ['Січ 2022', 'Лип 2022', 'Січ 2023', 'Лип 2023', 'Січ 2024', 'Кві 2024'],
+                datasets: [{
+                    label: 'Середня ціна А-95 (руб/л)',
+                    data: [50.8, 51.5, 52.1, 54.9, 55.5, 64.7],
+                    borderColor: '#EF476F',
+                    backgroundColor: 'rgba(239, 71, 111, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: tooltipTitleCallback },
+                scales: { y: { beginAtZero: false, title: { display: true, text: 'Ціна (руб/л)' } } }
+            }
+        });
+    };
+    shadow1.appendChild(script1);
+</script>
+
+
+
+<script>
+    // 1. Отримуємо контейнер
+    const container4 = document.getElementById("chart-price-container_two");
+    const shadow4 = container4.attachShadow({ mode: "open" });
+
+    // 2. HTML-структура лише для першого графіка
+    shadow4.innerHTML = `
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <div class="container mx-auto p-4 md:p-8 space-y-8 font-[Inter] bg-gray-50">
+          <h3 class="text-3xl text-black font-bold text-[#118AB2] mb-4 text-center" style = "font-family: Montserrat, sans-serif;">Динаміка зростання ціни на бензин А-95 у росії у 2025 році:</h3>
+            <div class="bg-white text-black rounded-lg shadow-lg p-6">
+                <div class="chart-container h-80">
+                    <canvas id="priceTrendChart"></canvas>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // 3. Скрипт Chart.js для першого графіка
+    const script4 = document.createElement('script');
+    script4.src = "https://cdn.jsdelivr.net/npm/chart.js";
+    script4.onload = () => {
+        // (Опціонально) Функція для Tooltip
+        const tooltipTitleCallback = { callbacks: { title: (items) => Array.isArray(items[0].chart.data.labels[items[0].dataIndex]) ? items[0].chart.data.labels[items[0].dataIndex].join(' ') : items[0].chart.data.labels[items[0].dataIndex] } };
+
+        const priceTrendCtx = shadow4.getElementById('priceTrendChart').getContext('2d');
+        new Chart(priceTrendCtx, {
+            type: 'line',
+            data: {
+                labels: ['Січ 2025', 'Лют 2025', 'Бер 2025', 'Квіт 2025','Трав 2025', 'Черв 2025', 'Лип 2025', 'Сер 2025', 'Вер 2025'],
+                datasets: [{
+                    label: 'Середня ціна А-95 (руб/л)',
+                    data: [60.5, 60.8, 61.2, 61.8, 62.5, 63.3, 64.0, 64.8, 65.9],
+                    borderColor: '#EF476F',
+                    backgroundColor: 'rgba(239, 71, 111, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: tooltipTitleCallback },
+                scales: { y: { beginAtZero: false, title: { display: true, text: 'Ціна (руб/л)' } } }
+            }
+        });
+    };
+    shadow4.appendChild(script4);
+</script>
+
+
+
+<div id="chart-deficit-container" style = "margin-top: 60px;"></div>
+
+<script>
+    const container2 = document.getElementById("chart-deficit-container");
+    const shadow2 = container2.attachShadow({ mode: "open" });
+
+    shadow2.innerHTML = `
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <div class="container mx-auto p-4 md:p-8 space-y-8 font-[Inter] bg-gray-50">
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-3xl text-black font-bold text-[#118AB2] mb-4 text-center" style = "font-family: Montserrat, sans-serif;">Регіони з найбільшим дефіцитом</h2>
+                <p class="text-center text-black text-slate-600 mb-6" style = "font-family: Montserrat, sans-serif; font-size: 13px;">Найбільше постраждали південні та аграрні регіони, де логістичні проблеми та сезонний попит загострили кризу. Графік показує відхилення цін від середнього по країні, що є індикатором дефіциту.</p>
+                <div class="chart-container h-96 md:h-[450px]">
+                    <canvas id="regionalDeficitChart"></canvas>
+                </div>
+            </div>
+        </div>
+    `;
+
+    // 3. Скрипт Chart.js для другого графіка
+    const script2 = document.createElement('script');
+    script2.src = "https://cdn.jsdelivr.net/npm/chart.js";
+    script2.onload = () => {
+        const processLabels = (labels) => { 
+            const maxLength = 16;
+            return labels.map(label => {
+                if (label.length <= maxLength) return label;
+                const words = label.split(' ');
+                const lines = [];
+                let line = '';
+                for (const w of words) {
+                    if ((line + ' ' + w).trim().length > maxLength) {
+                        lines.push(line.trim());
+                        line = w;
+                    } else line = (line + ' ' + w).trim();
+                }
+                if (line) lines.push(line.trim());
+                return lines;
+            });
+        };
+        const tooltipTitleCallback = { callbacks: { title: (items) => Array.isArray(items[0].chart.data.labels[items[0].dataIndex]) ? items[0].chart.data.labels[items[0].dataIndex].join(' ') : items[0].chart.data.labels[items[0].dataIndex] } };
+
+        const regionalDeficitCtx = shadow2.getElementById('regionalDeficitChart').getContext('2d');
+        new Chart(regionalDeficitCtx, {
+            type: 'bar',
+            data: {
+                labels: processLabels(['Краснодарський край', 'Ростовська область', 'Самарська область', 'Новосибірська область', 'Орловська область']),
+                datasets: [{
+                    label: 'Відхилення ціни від середньої (%)',
+                    data: [18, 15, 12, 9, 7],
+                    backgroundColor: ['#FF8C42', '#FFD166', '#06D6A0', '#118AB2', '#EF476F'],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: tooltipTitleCallback },
+                scales: { x: { beginAtZero: true, title: { display: true, text: 'Відхилення, %' } } }
+            }
+        });
+    };
+    shadow2.appendChild(script2);
+</script>
+
+<div id="chart-events-container" style = "margin-top: 70px;"></div>
+
+<script>
+    // 1. Отримуємо контейнер
+    const container3 = document.getElementById("chart-events-container");
+    const shadow3 = container3.attachShadow({ mode: "open" });
+
+    // 2. HTML-структура лише для третього блоку
+    shadow3.innerHTML = `
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<div class="w-full text-black text-center p-8 font-[Inter] bg-gray-50 flex justify-center">
+  <div class="bg-white rounded-lg shadow-lg p-8 w-full max-w-6xl">
+    <h2 class="text-3xl font-bold text-[#118AB2] mb-10 text-center" style = "font-family: Montserrat, sans-serif;">Реакція уряду та ланцюг подій:</h2>
+    
+    <!-- Головна сітка 2x2 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      
+      <!-- 1️⃣ Удари по НПЗ -->
+      <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <div class="h-12 w-12 rounded-full bg-[#FFD166] flex items-center justify-center text-xl font-bold text-slate-800 mb-3">1</div>
+        <h3 class="text-lg font-bold text-slate-800" style = "font-family: Montserrat, sans-serif;">Удари по НПЗ</h3>
+        <p class="mt-2 text-slate-600" style = "font-family: Montserrat, sans-serif;">Масовані атаки дронів виводять з ладу ключові об'єкти нафтопереробної інфраструктури.</p>
+      </div>
+      
+      <!-- 2️⃣ Падіння Виробництва -->
+      <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <div class="h-12 w-12 rounded-full bg-[#FF8C42] flex items-center justify-center text-xl font-bold text-slate-800 mb-3">2</div>
+        <h3 class="text-lg font-bold text-slate-800" style = "font-family: Montserrat, sans-serif;">Падіння Виробництва</h3>
+        <p class="mt-2 text-slate-600" style = "font-family: Montserrat, sans-serif;">Різке скорочення обсягів виробництва бензину та дизельного пального.</p>
+      </div>
+      
+      <!-- 3️⃣ Регіональний дефіцит -->
+      <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <div class="h-12 w-12 rounded-full bg-[#EF476F] flex items-center justify-center text-xl font-bold text-slate-800 mb-3">3</div>
+        <h3 class="text-lg font-bold text-slate-800" style = "font-family: Montserrat, sans-serif;">Регіональний Дефіцит та Ажіотаж</h3>
+        <p class="mt-2 text-slate-600" style = "font-family: Montserrat, sans-serif;">Виникають перебої з поставками в регіони, що провокує паніку та черги на АЗС.</p>
+      </div>
+      
+      <!-- 4️⃣ Заборона на Експорт -->
+      <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <div class="h-12 w-12 rounded-full bg-[#06D6A0] flex items-center justify-center text-xl font-bold text-slate-800 mb-3">4</div>
+        <h3 class="text-lg font-bold text-slate-800" style = "font-family: Montserrat, sans-serif;">Заборона на Експорт</h3>
+        <p class="mt-2 text-slate-600" style = "font-family: Montserrat, sans-serif;">Уряд рф вводить тимчасову заборону на експорт бензину для стабілізації внутрішнього ринку.</p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+</script>
+  
+
+</main>  
+
+<footer class="text-center text-black py-4 border-top" style="background-color: #f9f9f9; color: black; margin-top:70px;">
+  <p class="text-sm text-black text-slate-500" style = "font-family: Montserrat, sans-serif;">Аналітична інфографіка, 2025. Дані зібрані з відкритих джерел.</p>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
