@@ -27,3 +27,20 @@ This project is built with a combination of front-end and back-end technologies:
   - **Leaflet.js:** An open-source JavaScript library for creating interactive maps.
   - **Bootstrap 3:** A popular CSS framework for building responsive layouts.
   - **jQuery:** Required for Bootstrap 3 components to function properly.
+  ## Asset Setup & Project Videos
+
+**IMPORTANT:** To ensure the website displays correctly, you need to download the media files (images, logos, etc.) which are hosted separately to keep the repository lightweight.
+
+**1. Download the assets:**
+   - All necessary media files are available for download from the following Google Drive link:
+   
+     [**Download All Project Assets from Google Drive**](https://drive.google.com/drive/folders/1bjTYue6w3rUz7_Zd1ZaNtPtvJwVV9ryp?usp=sharing)
+
+**2. What's included:**
+   - **Website Media:** A folder with all the images and icons needed for the website to function correctly.
+   - **Project Presentation Video:** A short video demonstrating the website's features and functionality.
+   - **Project Trailer:** A humorous, entertaining trailer created to set the tone and mood of the project.
+
+**3. Place the files in the correct directory:**
+   - After downloading, find the folder containing the website's images (`logo.png`, `pic1.jpg`, etc.).
+   - Place all these files inside the `static/assets/` directory in your project folder.
