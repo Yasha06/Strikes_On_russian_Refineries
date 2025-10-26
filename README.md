@@ -1,5 +1,13 @@
 # Burning Barrels: The Russian Oil Refinery Strike Tracker
 
+## Live Demo
+
+**The project is hosted on Render and is available at the following link:**
+
+### ==> [https://burningbarrels.onrender.com](https://burningbarrels.onrender.com) <==
+
+---
+
 **Burning Barrels** is a web-based project developed for a Web Programming course. It provides an interactive visualization of Ukrainian drone strikes on Russian oil refineries since the beginning of the full-scale invasion. The project aims to track and display the economic and strategic impact of these attacks in an accessible and engaging way.
 
 The core feature of the site is an interactive map that visualizes the geography and intensity of the strikes, turning raw data into a compelling story.
